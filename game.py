@@ -11,8 +11,15 @@ class Game:
         self.display_winner()
 
     def display_welcome(btn):
-        user_choice = input("Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode")
-        print(*user_choice, sep = "\n")
+        user_choice = ["Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode"]
+        print(user_choice)
+        choice_input = input("Which mode do you choose? 1, 2 or 3:")
+        if int(choice_input) == 1:
+            print("Great, grab a partner and let's play!")
+        elif int(choice_input) == 2:
+            print("You think you can beat the AI?")
+        elif int(choice_input) == 3:
+            print("Watch and learn.")
         
 
     def display_rules(self):
