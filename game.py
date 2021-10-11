@@ -1,4 +1,4 @@
-from tkinter import *
+
 
 class Game:
     def __init__(self):
@@ -10,9 +10,9 @@ class Game:
         self.play()
         self.display_winner()
 
-    def display_welcome(btn):
+    def display_welcome(self):
         user_choice = ["Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode"]
-        print(user_choice)
+        print(*user_choice, sep = "\n")
         choice_input = input("Which mode do you choose? 1, 2 or 3:")
         if int(choice_input) == 1:
             print("Great, grab a partner and let's play!")
