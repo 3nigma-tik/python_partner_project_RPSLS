@@ -7,7 +7,6 @@ import random
 from tkinter import *
 
 
-
 class Game:
     def __init__(self):
         pass
@@ -17,6 +16,10 @@ class Game:
         self.display_welcome()
         self.play()
         self.display_winner()
+
+    def display_rules(self):
+        rules = ["Rules:", "scissors cuts paper", "paper covers rock", "rock crushes scissors", "lizard easts paper", "paper disproves spock", "spock vaporizes rock", "lizard poisons spock", "scissors decapitate lizard", "spock smashes scissors"]
+        print(*rules, sep = "\n")
 
     def display_welcome(self):
         user_choice = ["Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode"]
@@ -28,11 +31,19 @@ class Game:
             print("You think you can beat the AI?")
         elif int(choice_input) == 3:
             print("Watch and learn.")
-        
+        return choice_input
 
-    def display_rules(self):
-        rules = ["Rules:", "scissors cuts paper", "paper covers rock", "rock crushes scissors", "lizard easts paper", "paper disproves spock", "spock vaporizes rock", "lizard poisons spock", "scissors decapitate lizard", "spock smashes scissors"]
-        print(*rules, sep = "\n")
+    def player_mode(self):
+        if Game.display_welcome.choice_input == 1:
+            player_one = input("Enter player 1 name:")
+            player_two = input("Enter player 2 name:")
+            return player_one and player_two
+        elif Game.display_welcome.choice_input == 2:
+            player_one = input("Enter player 1 name:")
+            return player_one
+        elif Game.display_welcome.choice_input == 3:
+            
+
 
     def play(self):
         pass

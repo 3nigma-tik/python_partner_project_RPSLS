@@ -6,9 +6,9 @@ class AI(Player):
         self.name = "Deep Blue"
 
     def pick_gesture(self):
-        ai_gesture = Player.gesture
+        ai_gesture = int(Player.available_gestures)
         import random
         robot_gesture = random.randint(ai_gesture)
-        return robot_gesture
+        print(str(robot_gesture))
  
-    
+    pick_gesture("")
