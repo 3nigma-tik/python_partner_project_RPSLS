@@ -1,4 +1,7 @@
-
+from players import Players
+from human import Human
+from ai import AI 
+import random
 
 class Game:
     def __init__(self):
