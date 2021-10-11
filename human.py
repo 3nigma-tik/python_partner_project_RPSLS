@@ -1,7 +1,7 @@
-from players import Players
+from players import Player
 
 
-class Human(Players):
+class Human(Player):
     def __init__(self, name):
         self.name = name
 
