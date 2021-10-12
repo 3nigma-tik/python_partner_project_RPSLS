@@ -2,7 +2,7 @@ from gestures import Gestures
 
 
 class Player:
-    def __init__(self, name, gesture):
+    def __init__(self, name):
         self.name = name
         self.gesture = ["rock", "paper", "scissors", "lizard", "spock"]
         self.available_gestures = [Gestures("rock"), Gestures("paper"), Gestures("scissors"), Gestures("lizard"), Gestures("spock")]
