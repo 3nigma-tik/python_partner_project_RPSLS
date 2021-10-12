@@ -17,9 +17,15 @@ class Game:
         self.play()
         self.display_winner()
 
+
+    def display_rules(self):
+        rules = ["Rules:", "scissors cuts paper", "paper covers rock", "rock crushes scissors", "lizard easts paper", "paper disproves spock", "spock vaporizes rock", "lizard poisons spock", "scissors decapitate lizard", "spock smashes scissors"]
+        print(*rules, sep = "\n")
+
+
     def display_welcome(self):
         user_choice = ["Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode"]
-        print(user_choice)
+        print(*user_choice, sep = "\n")
         choice_input = input("Which mode do you choose? 1, 2 or 3:")
         if int(choice_input) == 1:
             print("Great, grab a partner and let's play!")
@@ -32,14 +38,25 @@ class Game:
             self.mode = 3 
         
 
-    def display_rules(self):
-        rules = ["Rules:", "scissors cuts paper", "paper covers rock", "rock crushes scissors", "lizard easts paper", "paper disproves spock", "spock vaporizes rock", "lizard poisons spock", "scissors decapitate lizard", "spock smashes scissors"]
-        print(*rules, sep = "\n")
+    #     return choice_input
+
+    # def player_mode(self):
+    #     if Game.display_welcome.choice_input == 1:
+    #         player_one = input("Enter player 1 name:")
+    #         player_two = input("Enter player 2 name:")
+    #         return player_one and player_two
+    #     elif Game.display_welcome.choice_input == 2:
+    #         player_one = input("Enter player 1 name:")
+    #         return player_one
+    #     elif Game.display_welcome.choice_input == 3:
+            
+
+
 
     def play(self):
         if self.mode == 1 or self.mode == 2:
             # Human
-            player_one = Human('Mr. Robot')
+            player_one = Human('Player 1')
                
         elif self.mode == 3:
             # Demo
@@ -49,7 +66,7 @@ class Game:
         # Player 2
         if self.mode == 1:
             # Human
-            player_two = Human('Bender')
+            player_two = Human('Player 2')
                 
         elif self.mode == 2 or self.mode == 3:
             # AI/Demo
