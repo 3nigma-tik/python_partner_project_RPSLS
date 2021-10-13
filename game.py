@@ -14,8 +14,8 @@ class Game:
     def run_game(self):
         self.display_rules()
         self.display_welcome()
-        self.play()
-        self.display_winner()
+        # self.play()
+        # self.display_winner()
 
 
     def display_rules(self):
@@ -24,18 +24,29 @@ class Game:
 
 
     def display_welcome(self):
+        print("Welcome to Rock Paper Scissors Lizard Spock!")        
         user_choice = ["Choose a mode:", "1: PvP", "2: PvE",  "3: Demo Mode"]
-        print(*user_choice, sep = "\n")
-        choice_input = input("Which mode do you choose? 1, 2 or 3:")
-        if int(choice_input) == 1:
-            print("Great, grab a partner and let's play!")
-            self.mode = 1
-        elif int(choice_input) == 2:
-            print("You think you can beat the AI?")
-            self.mode = 2
-        elif int(choice_input) == 3:
-            print("Watch and learn.")
-            self.mode = 3 
+        print(*user_choice, sep = "\n")      
+        
+        while True:                
+            choice_input = int(input("Which mode do you choose? 1, 2 or 3:"))                             
+
+            if int(choice_input) == 1:
+                print("Great, grab a partner and let's play!")
+                self.mode = 1
+                self.play()
+            elif int(choice_input) == 2:
+                print("You think you can beat the AI?")
+                self.mode = 2
+                self.play()
+            elif int(choice_input) == 3:
+                print("Watch and learn.")
+                self.mode = 3 
+                self.play()
+                break
+            else:
+                print("try again.")
+        
         
 
     #     return choice_input
@@ -104,21 +115,20 @@ class Game:
             # did a player win
             if player_two_gesture in p_o_defeats:
                 player_one.increase_score()
-                print(player_one.score)
+                print(f"Player 1 has {player_one.score} point/s")
             elif player_one_gesture in p_t_defeats:
                 player_two.increase_score()
+                print(f"Player 2 has {player_two.score} point/s")
                 
             if player_one.score >= 2:
                 self.winner = player_one
+                self.display_winner()
             elif player_two.score >= 2:
                 self.winner = player_two
+                self.display_winner()
 
 
 
 
     def display_winner(self):   
-        print(f"{self.winner.name} wins!!!")
-
-        
-
-    
+        print(f"{self.winner.name} wins!!!")    

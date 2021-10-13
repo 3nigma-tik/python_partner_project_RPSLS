@@ -14,11 +14,6 @@ class Player:
     def increase_score(self):
         self.score += 1
 
-    def which_handsign(self, chosen_gesture):
+    def which_handsign(self):
         pick_gesture = input(Gestures.chosen_gesture)
         print(pick_gesture)  
-
-        
-    def round_winner():
-        pass
-

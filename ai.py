@@ -9,7 +9,7 @@ class AI(Player):
     def pick_gesture(self):
         gesture = ["rock", "paper", "scissors", "lizard", "spock"]
         index = random.randint(0,4)
-        print(f"{self.name} pick {gesture[index]}")
+        print(f"{self.name} picked {gesture[index]}")
         return gesture[index]
         
 
